@@ -32,7 +32,7 @@ class SearcherTest extends TestCase
                         ->add($this->hotel_availability_list)
                         ->search(2, 20, 30)
                         ->ensureRoomBelongToThesameHotelAndRoomIsAdjacentAndOnThesameFloor();
-//die(print_r($searcher));
+
         $this->assertEquals($searcher,
             [
                 ["name" => "Hotel A", "available" => "True", "floor" => 1, "room_no" => 3, "per_room_price" => 25.80],
@@ -49,7 +49,7 @@ class SearcherTest extends TestCase
                         ->search(2, 30, 50)
                         ->ensureRoomBelongToThesameHotelAndRoomIsAdjacentAndOnThesameFloor();
 
-        $this->assertEqualsCanonicalizing($searcher,
+        $this->assertEquals($searcher,
             [
                 ["name" => "Hotel B", "available" => "True", "floor" => 1, "room_no" => 3, "per_room_price" => 45.80],
                 ["name" => "Hotel B", "available" => "True", "floor" => 1, "room_no" => 4, "per_room_price" => 45.80]
@@ -60,10 +60,11 @@ class SearcherTest extends TestCase
     public function testSearchReturnsCorrectResultMinimum25Maximu40RoomRequired1(): void
     {
         $searcher = (new Searcher())
-                         ->add($this->hotel_availability_list)->search(1, 25, 40)
+                         ->add($this->hotel_availability_list)
+                         ->search(1, 25, 40)
                          ->ensureRoomBelongToThesameHotelAndRoomIsAdjacentAndOnThesameFloor();
 
-        $this->assertEqualsCanonicalizing($searcher,
+        $this->assertEquals($searcher,
             [
                 ["name" => "Hotel A", "available" => "True", "floor" => 1, "room_no" => 3, "per_room_price" => 25.80],
                 ["name" => "Hotel A", "available" => "True", "floor" => 1, "room_no" => 4, "per_room_price" => 25.80],
