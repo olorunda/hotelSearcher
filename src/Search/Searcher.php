@@ -32,7 +32,7 @@ class Searcher
         $room_count=0;
         foreach($this->properties as $property){
             if($property['available']=='True' && ($property['per_room_price'] >=$minimum && $property['per_room_price']<=$maximum)){
-                   $this->available_and_within_budget_groupedby_hotel_and_floor[$property['name']][$property['floor']][]=$property;
+                   $this->available_and_within_budget_groupedby_hotel_and_floor[$property['name']][$property['floor']][$property['room_no']]=$property;
                    $this->available_and_within_budget[]=$property;
                    $room_count++;
             }
@@ -54,9 +54,8 @@ class Searcher
             foreach($available_and_within_budget_hotel as $available_and_within_budget_floor){
 
                 if(count($available_and_within_budget_floor)>=$this->rooms_required){
-
+                    sort($available_and_within_budget_floor);
                     foreach($available_and_within_budget_floor as $withing_thesame_floor){
-
                         if($count==$this->rooms_required){
                             return $this->available_rooms;
                         }
