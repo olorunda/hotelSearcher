@@ -31,6 +31,6 @@ Minimum budget £25 per room.\
 Maximum budget £40 per room.\
 Number of rooms required is 1.
  
-####All tests were passed using the sample property data. 
+**All tests were passed using the sample property data.** 
 
 
