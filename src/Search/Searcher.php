@@ -48,7 +48,7 @@ class Searcher
                     sort($available_and_within_budget_floor);
                     foreach($available_and_within_budget_floor as $withing_thesame_floor){
                         if($count==$this->rooms_required){
-                            return $this->available_rooms;
+                            return array_values($this->available_rooms);
                         }
 
                         $this->available_rooms[]=$withing_thesame_floor;
