@@ -20,12 +20,11 @@ class Searcher
     public function search(int $roomsRequired, $minimum, $maximum): Searcher
     {
         $this->rooms_required=$roomsRequired;
-        $room_count=0;
+
         foreach($this->properties as $property){
             if($property['available']=='True' && ($property['per_room_price'] >=$minimum && $property['per_room_price']<=$maximum)){
                    $this->available_and_within_budget_groupedby_hotel_and_floor[$property['name']][$property['floor']][$property['room_no']]=$property;
                    $this->available_and_within_budget[]=$property;
-                   $room_count++;
             }
         }
 
