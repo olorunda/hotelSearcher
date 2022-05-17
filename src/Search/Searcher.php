@@ -4,19 +4,10 @@ namespace MercuryHolidays\Search;
 
 class Searcher
 {
-    private $properties;
-    /**
-     * @var int
-     */
-    private $rooms_required;
-    /**
-     * @var array
-     */
+    private array $properties;
+    private int $rooms_required;
     private array $available_and_within_budget_groupedby_hotel_and_floor=[];
     private array $available_rooms=[];
-    /**
-     * @var array
-     */
     private array $available_and_within_budget=[];
 
 
