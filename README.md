@@ -1,4 +1,4 @@
-# Mercury Holidays - Take Home Test
+# Hotel Searcher Algo
 Two more methods were created in the searcher class :
 
  - `ensureRoomBelongToThesameHotelAndRoomIsAdjacentAndOnThesameFloor()`
